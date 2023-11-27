@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <style>
+         h3 {text-align: center;}
+         h1 {text-align: center;}
+         title {text-align: center;}
+         table, th, td {
+            border: 1px solid black;
+         }
+      </style>
+</head>
+
+<body>
+<h3 style="text-align:center"><a href = "/">Go back to search for an activity</a></h3>
+
+<h1>Activities found</h1>
+<form  action="/register", method="POST", style="text-align:center">
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Time</th>
+                <th>Age</th>
+                <th>Director</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+     <input type="submit" value="join an activity">
+
+</form>
+</body>
+</html>

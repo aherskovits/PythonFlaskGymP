@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+      <style>
+         h3 {text-align: center;}
+         title {text-align: center;}
+         table, th, td {
+            border: 1px solid black;
+         }
+      </style>
+</head>
+
+<body>
+<h4 style="text-align:center"><a href = "/">Back to find an activity</a></h4>
+<h3>Your Details</h3>
+<!--onkeydown="check()"-->
+<form  action="/register", method="POST", style="text-align:center">
+    <label for="firstname">Name:</label>
+    <input type="text" id="firstname" name="firstname"><br>
+
+    <label for="lastname">LastName:</label>
+    <input type="text" id="lastname" name="lastname"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone"><br>
+
+     <label for="age">Age:</label>
+    <input type="text" id="age" name="age"><br>
+
+    <label for="time">Time:</label>
+    <input type="text" id="time" name="time"><br>
+
+     <label for="activity">Activity:</label>
+    <input type="text" id="activity" name="activity"><br>
+
+    <input type="submit" value="Join">
+
+
+    {% if message == 'successfully registered' %}
+            <p>successfully registered!</p>
+      <p>you joind the group at this time</p>
+
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {%elif message == 'no activity error' %}
+        <p>no such activity at that time </p>
+        <p>sign up for an existing activity</p>
+
+        {% endif %}
+</form>
+
+</body>
+</html>
