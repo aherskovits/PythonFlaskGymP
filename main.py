@@ -81,7 +81,7 @@ def regis():
     else:
         return render_template('register.html')
 
-# a
+
 if __name__ == '__main__':
     app.run(debug=True)
  
